@@ -34,6 +34,17 @@ input,textarea,select{font:inherit}
 .bb-glow{animation:bbGlow 3.5s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){.bb-orb1,.bb-orb2,.bb-star,.bb-pulse,.bb-float,.bb-bar,.bb-marquee,.bb-glow{animation:none}}
 </style>
+<style>
+.bb-float-cta{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:16px;position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 24px;border-radius:999px;background:#C026D3;color:#fff!important;text-decoration:none;font-weight:700;box-shadow:0 10px 40px rgba(192,38,211,.55);transition:opacity .3s,transform .3s}
+.bb-float-cta.bb-hide{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (max-width:640px){.bb-float-cta{left:12px;right:12px;bottom:12px;justify-content:center}}
+details.bb-faq{background:#110E19;border:1px solid #241E33;border-radius:18px;padding:0 24px}
+details.bb-faq summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+details.bb-faq summary::-webkit-details-marker{display:none}
+details.bb-faq summary::after{content:"+";color:#F472B6;font-size:24px;line-height:1}
+details.bb-faq[open] summary::after{content:"–"}
+details.bb-faq p{margin:0 0 20px;color:#B9B3C9}
+</style>
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}@media (max-width:640px){nav{gap:10px 18px!important;font-size:14px!important}}</style>
 </head>
 <body>
@@ -62,7 +73,7 @@ input,textarea,select{font:inherit}
 <a href="#munkaink" style="text-decoration: none">Munkáink</a>
 <a href="#csomagok" style="text-decoration: none">Csomagok</a>
 <a href="#rolunk" style="text-decoration: none">Rólunk</a>
-<a href="#kapcsolat" style="text-decoration: none">Kapcsolat</a>
+<a href="#kapcsolat" style="text-decoration: none; background: #C026D3; color: #FFFFFF; padding: 8px 18px; border-radius: 999px; font-weight: 700">Ingyenes konzultáció</a>
 </nav>
 </header>
 
@@ -81,9 +92,10 @@ Marketing céges ügyfeleknek · Budapest
 <span style="display: inline-flex; align-items: center; gap: 10px"><span style="display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: #DB2777; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9 L10 3" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Mérhető megtérülés</span>
 </div>
 <div style="margin-top: 48px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
-<a class="bb-pulse" href="#csomagok" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 32px; border-radius: 14px; background: #C026D3; color: #FFFFFF; text-decoration: none; font-weight: 700">Csomagok megtekintése</a>
-<a href="#kapcsolat" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 32px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.35); color: #FFFFFF; text-decoration: none; font-weight: 700">Ingyenes konzultáció</a>
+<a class="bb-pulse" href="#kapcsolat" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 34px; border-radius: 14px; background: #C026D3; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 17px">Kérem az ingyenes konzultációt →</a>
+<a href="#csomagok" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 30px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.35); color: #FFFFFF; text-decoration: none; font-weight: 700">Csomagok és árak</a>
 </div>
+<p style="margin: 18px 0 0; font-size: 14px; color: #B9B3C9">Ingyenes · 30 perc · Kötelezettség nélkül · Válasz 2 munkanapon belül</p>
 </section>
 </div>
 
@@ -96,6 +108,31 @@ Marketing céges ügyfeleknek · Budapest
 </div>
 </div>
 <p style="margin: 22px auto 0; padding: 0 24px; max-width: 640px; font-size: 15px; color: #B9B3C9">Több <strong style="color: #FFFFFF">multinacionális vállalat</strong> bizalmát élvezzük. Partnereinket bizalmasan kezeljük, ezért kérésükre nem tesszük közzé a nevüket.</p>
+</section>
+
+<section id="ismeros" style="max-width: 1200px; margin: 0 auto; padding: 110px 24px 0">
+<div style="text-align: center; margin-bottom: 44px">
+<p style="margin: 0 0 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #8C86A0">Ismerős?</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.1; letter-spacing: -0.025em">A közösségi média <span style="color: #F472B6">nem hoz ügyfelet?</span></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px">
+<div style="background: #110E19; border: 1px solid #241E33; border-radius: 22px; padding: 28px">
+<p style="margin: 0 0 10px; font-size: 28px; line-height: 1; color: #F472B6">✕</p>
+<h3 style="margin: 0 0 8px; font-size: 19px; font-weight: 700">Nincs idő posztolni</h3>
+<p style="margin: 0; color: #B9B3C9">Hetekig nem kerül ki semmi, aztán egyszerre három poszt – a követők pedig elfelejtenek.</p>
+</div>
+<div style="background: #110E19; border: 1px solid #241E33; border-radius: 22px; padding: 28px">
+<p style="margin: 0 0 10px; font-size: 28px; line-height: 1; color: #F472B6">✕</p>
+<h3 style="margin: 0 0 8px; font-size: 19px; font-weight: 700">Van megjelenés, nincs eredmény</h3>
+<p style="margin: 0; color: #B9B3C9">Jönnek a lájkok, de nem jönnek az érdeklődők, a foglalások és az ajánlatkérések.</p>
+</div>
+<div style="background: #110E19; border: 1px solid #241E33; border-radius: 22px; padding: 28px">
+<p style="margin: 0 0 10px; font-size: 28px; line-height: 1; color: #F472B6">✕</p>
+<h3 style="margin: 0 0 8px; font-size: 19px; font-weight: 700">A TikTok kimarad</h3>
+<p style="margin: 0; color: #B9B3C9">A versenytársak már ott vannak, ahol most a figyelem – te pedig nem tudod, hogyan kezdj bele.</p>
+</div>
+</div>
+<p style="margin: 36px 0 0; text-align: center; font-size: 18px; color: #E4DFF0">Pont ezeket oldjuk meg – <a href="#kapcsolat" style="color: #F472B6; font-weight: 700">nézzük meg együtt a te helyzeted →</a></p>
 </section>
 
 <section id="szolgaltatasok" style="max-width: 1200px; margin: 0 auto; padding: 110px 24px">
@@ -246,7 +283,7 @@ Marketing céges ügyfeleknek · Budapest
 <li>✓ Grafikák és szövegek</li>
 <li>✓ Havi kimutatás</li>
 </ul>
-<a href="#kapcsolat" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; border: 1px solid #5B4C80; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
+<a href="#kapcsolat" data-csomag="Alap" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; border: 1px solid #5B4C80; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
 </div>
 
 <div style="position: relative; background: #1A1229; border: 2px solid #C026D3; border-radius: 26px; padding: 34px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 0 70px rgba(217,70,239,0.3)">
@@ -266,7 +303,7 @@ Marketing céges ügyfeleknek · Budapest
 <li>✓ Hozzászólások és üzenetek kezelése</li>
 <li>✓ Havi kimutatás és egyeztetés</li>
 </ul>
-<a class="bb-pulse" href="#kapcsolat" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; background: #C026D3; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
+<a class="bb-pulse" href="#kapcsolat" data-csomag="Növekedés" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; background: #C026D3; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
 </div>
 
 <div style="background: #110E19; border: 1px solid #2E2545; border-radius: 26px; padding: 34px; display: flex; flex-direction: column; gap: 20px">
@@ -286,11 +323,12 @@ Marketing céges ügyfeleknek · Budapest
 <li>✓ Céges kommunikáció: közlemények, hírlevél</li>
 <li>✓ Kiemelt kapcsolattartás</li>
 </ul>
-<a href="#kapcsolat" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; border: 1px solid #5B4C80; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
+<a href="#kapcsolat" data-csomag="Prémium" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; border: 1px solid #5B4C80; color: #FFFFFF; text-decoration: none; font-weight: 700">Ezt választom</a>
 </div>
 
 </div>
 <p style="margin: 24px 0 0; text-align: center; font-size: 14px; color: #A49DB8">A hirdetési keret nem része a csomagdíjnak. Minimum 3 hónapos együttműködés javasolt.</p>
+<p style="margin: 14px 0 0; text-align: center; font-size: 17px; color: #E4DFF0">Nem tudod, melyik csomag kell? <a href="#kapcsolat" data-csomag="Még nem tudom / egyedi ajánlat" style="color: #F472B6; font-weight: 700">Segítünk választani – ingyen →</a></p>
 </section>
 
 <section id="rolunk" style="max-width: 1000px; margin: 0 auto; padding: 0 24px 110px; text-align: center">
@@ -313,10 +351,26 @@ Marketing céges ügyfeleknek · Budapest
 </div>
 </section>
 
+<section id="gyik" style="max-width: 820px; margin: 0 auto; padding: 0 24px 110px">
+<div style="text-align: center; margin-bottom: 40px">
+<p style="margin: 0 0 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #8C86A0">Gyakori kérdések</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.1; letter-spacing: -0.025em">Mielőtt döntesz</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<details class="bb-faq"><summary>Mi történik az ingyenes konzultáción?</summary><p>30 percben átnézzük, hol tart most a céged online, kik a versenytársaid, és hol a legnagyobb lehetőség. Kapsz tőlünk konkrét javaslatokat – akkor is, ha végül nem velünk dolgozol.</p></details>
+<details class="bb-faq"><summary>Mennyi idő alatt látszik az eredmény?</summary><p>Az első hetekben kialakítjuk a stílust és a rendszeres megjelenést. A számokban jellemzően néhány hónap alatt látszik a változás, ezért javaslunk legalább 3 hónapos együttműködést.</p></details>
+<details class="bb-faq"><summary>Benne van a díjban a hirdetési költség?</summary><p>Nem. A hirdetési keretet közvetlenül a platformok (Facebook, Instagram, TikTok) felé fizeted, így pontosan látod, mire megy el. Abban segítünk, hogy mekkora keret éri meg a céged számára.</p></details>
+<details class="bb-faq"><summary>Mit kell nekünk adnunk?</summary><p>Egy rövid megismerő beszélgetést, hozzáférést a közösségi oldalakhoz, és ha van, logót, fotókat, arculati anyagokat. A havi tartalomnaptárt előre jóváhagyásra küldjük, így semmi nem kerül ki a tudtod nélkül.</p></details>
+</div>
+</section>
+
 <section id="kapcsolat" style="background: radial-gradient(ellipse 60% 70% at 50% 110%, #C026D3 0%, rgba(124,58,237,0.45) 40%, rgba(7,6,11,0) 75%)">
 <div style="max-width: 640px; margin: 0 auto; padding: 100px 24px 140px; text-align: center">
-<h2 style="margin: 0 0 16px; font-weight: 800; font-size: clamp(32px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.03em">Kezdjük el <span style="color: #F472B6">együtt</span></h2>
-<p style="margin: 0 0 40px; color: #C9C3D9; font-size: 17px">Írd meg röviden, mivel foglalkozik a céged, és két munkanapon belül jelentkezünk.</p>
+<h2 style="margin: 0 0 16px; font-weight: 800; font-size: clamp(32px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.03em">Kérj <span style="color: #F472B6">ingyenes konzultációt</span></h2>
+<p style="margin: 0 0 22px; color: #C9C3D9; font-size: 17px">Egy perc kitölteni. Két munkanapon belül személyesen jelentkezünk.</p>
+<div style="margin: 0 0 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; font-size: 14px; font-weight: 600; color: #E4DFF0">
+<span>✓ Ingyenes</span><span>✓ Kötelezettség nélkül</span><span>✓ Konkrét javaslatokkal</span>
+</div>
 <form id="bb-urlap" style="text-align: left; background: #110E19; border: 1px solid #2E2545; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Név
@@ -329,6 +383,9 @@ Marketing céges ügyfeleknek · Budapest
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">E-mail-cím
 <input name="email" required type="email" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 </label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Telefonszám <span style="font-weight: 400; color: #A49DB8">(nem kötelező – így gyorsabban visszahívunk)</span>
+<input type="tel" name="telefon" autocomplete="tel" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
+</label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Melyik csomag érdekel?
 <select name="csomag" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 <option>Alap</option>
@@ -337,11 +394,12 @@ Marketing céges ügyfeleknek · Budapest
 <option>Még nem tudom / egyedi ajánlat</option>
 </select>
 </label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Miben segíthetünk?
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Miben segíthetünk? <span style="font-weight: 400; color: #A49DB8">(nem kötelező)</span>
 <textarea name="uzenet" rows="4" style="padding: 14px 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF; resize: vertical"></textarea>
 </label>
 <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-<button type="submit" id="bb-gomb" style="margin-top: 6px; min-height: 54px; border: 0; border-radius: 14px; background: #C026D3; color: #FFFFFF; font: inherit; font-weight: 700; cursor: pointer">Ajánlatot kérek</button>
+<button type="submit" id="bb-gomb" style="margin-top: 6px; min-height: 54px; border: 0; border-radius: 14px; background: #C026D3; color: #FFFFFF; font: inherit; font-weight: 700; cursor: pointer">Kérem az ingyenes konzultációt</button>
+<p style="margin: 2px 0 0; font-size: 13px; color: #A49DB8; text-align: center">Az adataidat bizalmasan kezeljük, és csak a kapcsolatfelvételhez használjuk.</p>
 <p id="bb-uzenet" role="status" style="margin: 4px 0 0; min-height: 24px; font-weight: 600; color: #F9A8D4"></p>
 </form>
 <p style="margin: 28px 0 0; color: #C9C3D9">[e-mail-cím] · [telefonszám]</p>
@@ -356,7 +414,15 @@ Marketing céges ügyfeleknek · Budapest
 </footer>
 
 </div>
+<a href="#kapcsolat" class="bb-float-cta bb-hide" id="bb-float">Ingyenes konzultáció →</a>
 <script>
+(function(){
+var fl=document.getElementById('bb-float'),hero=document.getElementById('top'),kap=document.getElementById('kapcsolat');
+function upd(){var y=window.scrollY,hb=hero.offsetTop+hero.offsetHeight,kt=kap.getBoundingClientRect().top;fl.classList.toggle('bb-hide',y<hb-200||kt<window.innerHeight*0.8);}
+window.addEventListener('scroll',upd,{passive:true});upd();
+var sel=document.querySelector('select[name="csomag"]');
+document.querySelectorAll('a[data-csomag]').forEach(function(a){a.addEventListener('click',function(){sel.value=a.getAttribute('data-csomag');});});
+})();
 (function(){
 var f=document.getElementById('bb-urlap'),g=document.getElementById('bb-gomb'),m=document.getElementById('bb-uzenet');
 f.addEventListener('submit',function(e){
@@ -364,7 +430,7 @@ e.preventDefault();g.disabled=true;g.textContent='Küldés…';m.textContent='';
 fetch('https://script.google.com/macros/s/AKfycbzVem3qwVKgUOg-rqgMP7ffZdAFqlCVYPXP4WEPqg_luR2koqcL6DsK-BC7zl5AkWJeoQ/exec',{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
 .then(function(){f.reset();m.textContent='Köszönjük! Megkaptuk az üzeneted, két munkanapon belül jelentkezünk.';})
 .catch(function(){m.textContent='Hiba történt a küldéskor. Kérjük, próbáld újra később.';})
-.finally(function(){g.disabled=false;g.textContent='Ajánlatot kérek';});
+.finally(function(){g.disabled=false;g.textContent='Kérem az ingyenes konzultációt';});
 });
 })();
 </script>
