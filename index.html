@@ -317,20 +317,20 @@ Marketing céges ügyfeleknek · Budapest
 <div style="max-width: 640px; margin: 0 auto; padding: 100px 24px 140px; text-align: center">
 <h2 style="margin: 0 0 16px; font-weight: 800; font-size: clamp(32px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.03em">Kezdjük el <span style="color: #F472B6">együtt</span></h2>
 <p style="margin: 0 0 40px; color: #C9C3D9; font-size: 17px">Írd meg röviden, mivel foglalkozik a céged, és két munkanapon belül jelentkezünk.</p>
-<form action="mailto:EMAIL@brandbloom.hu" method="post" enctype="text/plain" style="text-align: left; background: #110E19; border: 1px solid #2E2545; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+<form id="bb-urlap" style="text-align: left; background: #110E19; border: 1px solid #2E2545; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Név
-<input name="Név" type="text" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
+<input name="nev" required type="text" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 </label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Cégnév
-<input name="Cégnév" type="text" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
+<input name="cegnev" type="text" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 </label>
 </div>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">E-mail-cím
-<input name="E-mail-cím" type="email" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
+<input name="email" required type="email" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 </label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Melyik csomag érdekel?
-<select name="Melyik csomag érdekel" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
+<select name="csomag" style="min-height: 50px; padding: 0 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF">
 <option>Alap</option>
 <option selected>Növekedés</option>
 <option>Prémium</option>
@@ -338,9 +338,11 @@ Marketing céges ügyfeleknek · Budapest
 </select>
 </label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Miben segíthetünk?
-<textarea name="Miben segíthetünk" rows="4" style="padding: 14px 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF; resize: vertical"></textarea>
+<textarea name="uzenet" rows="4" style="padding: 14px 16px; border: 1px solid #3A2F52; border-radius: 12px; background: #07060B; color: #FFFFFF; resize: vertical"></textarea>
 </label>
-<button type="submit" style="margin-top: 6px; min-height: 54px; border: 0; border-radius: 14px; background: #C026D3; color: #FFFFFF; font: inherit; font-weight: 700; cursor: pointer">Ajánlatot kérek</button>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+<button type="submit" id="bb-gomb" style="margin-top: 6px; min-height: 54px; border: 0; border-radius: 14px; background: #C026D3; color: #FFFFFF; font: inherit; font-weight: 700; cursor: pointer">Ajánlatot kérek</button>
+<p id="bb-uzenet" role="status" style="margin: 4px 0 0; min-height: 24px; font-weight: 600; color: #F9A8D4"></p>
 </form>
 <p style="margin: 28px 0 0; color: #C9C3D9">[e-mail-cím] · [telefonszám]</p>
 </div>
@@ -354,5 +356,17 @@ Marketing céges ügyfeleknek · Budapest
 </footer>
 
 </div>
+<script>
+(function(){
+var f=document.getElementById('bb-urlap'),g=document.getElementById('bb-gomb'),m=document.getElementById('bb-uzenet');
+f.addEventListener('submit',function(e){
+e.preventDefault();g.disabled=true;g.textContent='Küldés…';m.textContent='';
+fetch('https://script.google.com/macros/s/AKfycbzVem3qwVKgUOg-rqgMP7ffZdAFqlCVYPXP4WEPqg_luR2koqcL6DsK-BC7zl5AkWJeoQ/exec',{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
+.then(function(){f.reset();m.textContent='Köszönjük! Megkaptuk az üzeneted, két munkanapon belül jelentkezünk.';})
+.catch(function(){m.textContent='Hiba történt a küldéskor. Kérjük, próbáld újra később.';})
+.finally(function(){g.disabled=false;g.textContent='Ajánlatot kérek';});
+});
+})();
+</script>
 </body>
 </html>
